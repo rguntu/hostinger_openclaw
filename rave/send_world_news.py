@@ -1,0 +1,50 @@
+import smtplib
+from email.message import EmailMessage
+
+# Setup
+user = "rguntu9@gmail.com"
+password = "uiwgzolsemebwfhj" 
+
+# Create message
+msg = EmailMessage()
+msg['Subject'] = "World News - Top 3 Headlines"
+msg['From'] = user
+msg['To'] = user
+
+# HTML Content (Images wrapped in Links)
+html_content = """
+<html>
+<body style="font-family: sans-serif; line-height: 1.4; color: #333;">
+
+    <h1>World News Snapshot</h1>
+    <hr>
+    
+    <h3>1. UN Security Council Passes Ceasefire Resolution</h3>
+    <a href="https://news.google.com">
+        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=300&fit=crop" alt="UN" style="width:100%; border-radius:8px;">
+    </a>
+
+    <h3>2. Global Markets React to Latest Inflation Data</h3>
+    <a href="https://news.google.com">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=300&fit=crop" alt="Markets" style="width:100%; border-radius:8px;">
+    </a>
+
+    <h3>3. Tech Giants Unveil New AI Regulations</h3>
+    <a href="https://news.google.com">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=300&fit=crop" alt="AI" style="width:100%; border-radius:8px;">
+    </a>
+
+</body>
+</html>
+"""
+
+msg.add_alternative(html_content, subtype='html')
+
+# Send
+try:
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+        smtp.login(user, password)
+        smtp.send_message(msg)
+    print("Email sent successfully!")
+except Exception as e:
+    print(f"Error: {e}")

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "porteden-email": {
+      "version": "1.0.4",
+      "installedAt": 1773854102156
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1773968402189
+    }
+  }
+}
