@@ -1,5 +1,14 @@
-.openclaw/openclaw.json
+node_modules/
 .env
-.DS_Store
-__pycache__/
-*.pyc
+*.log
+tmp/
+.git/
+# Exclude sensitive agent configs if they contain raw keys
+**/agent.json
+**/creds.json
+!IDENTITY.md
+!SOUL.md
+!USER.md
+!AGENTS.md
+!MEMORY.md
+!memory/*.md
