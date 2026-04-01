@@ -16,5 +16,8 @@ if git diff-index --quiet HEAD --; then
 else
     git commit -m "Auto-backup: $(date)"
     git push origin master
+    touch "/Users/rave/.openclaw/workspace/memory/last_backup"
     echo "$(date): Changes backed up successfully." >> "$LOG_FILE"
+    # Send Discord notification (adjust channel ID if needed)
+    openclaw message send --target "channel:1488695433952886908" --message "✅ Workspace backup completed successfully at $(date)"
 fi
