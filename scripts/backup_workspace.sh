@@ -19,5 +19,5 @@ else
     touch "/Users/rave/.openclaw/workspace/memory/last_backup"
     echo "$(date): Changes backed up successfully." >> "$LOG_FILE"
     # Send Discord notification (adjust channel ID if needed)
-    openclaw message send --target "channel:1488695433952886908" --message "✅ Workspace backup completed successfully at $(date)"
+    openclaw message send --channel discord --target "channel:1488695433952886908" --message "✅ Workspace backup completed successfully at $(date)"
 fi
