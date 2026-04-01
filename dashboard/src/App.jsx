@@ -15,261 +15,222 @@ import {
   Zap,
   ExternalLink,
   RefreshCw,
-  Plus
+  Plus,
+  ArrowUpRight,
+  Clock,
+  Code
 } from 'lucide-react';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('Dashboard');
-  
-  const [agents, setAgents] = useState([
-    { id: 'codex', status: 'online', task: 'Idle', uptime: '1h 10m', type: 'Coding Agent' },
-    { id: 'main', status: 'online', task: 'Chatting with Rave', uptime: '4h', type: 'Main Agent' }
-  ]);
-  
-  const [tokens, setTokens] = useState({
-    input: 128000,
-    output: 403,
-    cost: '$1.12'
+  const [agents, setAgents] = useState([]);
+  const [tokens, setTokens] = useState({ input: 0, cost: '$0.00' });
+  const [sessions, setSessions] = useState([]);
+  const [error, setError] = useState(null);
+  const [systemInfo, setSystemInfo] = useState({
+    user: 'Raveendra Guntupalli',
+    serviceStatus: 'Checking...'
   });
 
+  const [cronJobs, setCronJobs] = useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Since gateway is Loopback-Only (127.0.0.1:18789), it will ONLY accept 
+        // requests from the same machine. Fetching from 192.168.1.83 browser 
+        // will FAIL due to loopback restriction. We must use 127.0.0.1.
+        const response = await fetch('http://127.0.0.1:18789/health', {
+            headers: { 'Accept': 'application/json' }
+        });
+        
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        setError(null);
+
+        if (Array.isArray(data[1])) {
+          setAgents(data[1].map(a => ({
+            id: a.agentId,
+            status: 'online',
+            type: a.name,
+            sessions: a.sessions?.count || 0
+          })));
+        }
+
+        if (data[2] && Array.isArray(data[2].recent)) {
+          const recentSessions = data[2].recent.map(s => ({
+            sessionId: s.key?.split(':').pop() || 'n/a',
+            agentId: s.key?.split(':')[1] || 'main',
+            kind: s.key?.split(':')[2] || 'group',
+            totalTokens: s.totalTokens || 0,
+            updatedAt: s.updatedAt,
+            model: s.model || 'unknown'
+          }));
+          setSessions(recentSessions);
+          
+          const totalTokens = data[2].recent.reduce((acc, s) => acc + (s.totalTokens || 0), 0);
+          setTokens({
+            input: totalTokens,
+            cost: `$${(data[2].recent.reduce((acc, s) => acc + (s.estimatedCostUsd || 0), 0)).toFixed(2)}`
+          });
+        }
+
+        setSystemInfo(prev => ({
+          ...prev,
+          serviceStatus: data[0] ? 'Healthy' : 'Degraded'
+        }));
+
+        try {
+          const cronRes = await fetch('http://127.0.0.1:18789/cron/list');
+          const cronData = await cronRes.json();
+          setCronJobs(cronData.jobs || []);
+        } catch (e) { console.error('Cron fetch failed', e); }
+
+      } catch (err) {
+        console.error('Dashboard Fetch Error:', err);
+        setError("Loopback-Only Gateway Detected. You MUST access this dashboard via 'localhost'. Accessing via local IP (192.168.1.x) will be blocked.");
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   const renderContent = () => {
+    if (error) {
+        return (
+            <div className="bg-amber-50 border border-amber-200 p-10 rounded text-center shadow-sm">
+                <div className="text-amber-700 font-black mb-3 uppercase tracking-widest text-xs">Loopback Mismatch Warning</div>
+                <div className="text-sm text-amber-600 max-w-sm mx-auto mb-6 font-medium font-mono leading-relaxed">{error}</div>
+                <div className="flex flex-col space-y-3 items-center">
+                    <a href="http://localhost:5173/" className="px-6 py-2.5 bg-gray-900 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-lg shadow-xl hover:bg-black transition">
+                        USE LOCALHOST:5173
+                    </a>
+                </div>
+                <div className="mt-10 text-[9px] uppercase font-black text-gray-400 tracking-widest bg-white/40 p-2 inline-block">
+                    Target: http://127.0.0.1:18789/health
+                </div>
+            </div>
+        );
+    }
+
     switch (activeTab) {
       case 'Dashboard':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-5 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wider">Quick Overview</h3>
-                <Activity size={18} className="text-[#3b78e7]" />
-              </div>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center py-2 border-b border-gray-50">
-                  <span className="text-sm text-gray-500">Service Status</span>
-                  <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 uppercase">Healthy</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition hover:shadow-md">
+                <div className="flex justify-between items-center mb-5 text-gray-300 uppercase text-[9px] font-black tracking-[0.2em]">
+                    <span>Status</span>
+                    <Activity size={14} className="text-blue-500" />
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-50">
-                  <span className="text-sm text-gray-500">Active Agents</span>
-                  <span className="text-sm font-bold text-gray-800">{agents.length}</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-sm text-gray-500">Gateway Port</span>
-                  <span className="text-sm font-mono text-gray-600">18789</span>
-                </div>
-              </div>
+                <div className="text-3xl font-black text-gray-900 uppercase">{systemInfo.serviceStatus}</div>
+                <div className="text-[9px] text-gray-400 mt-2 uppercase font-black tracking-widest">Gateway Loopback</div>
             </div>
-
-            <div className="bg-white p-5 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-gray-700 text-sm uppercase tracking-wider">Session Cost</h3>
-                <CreditCard size={18} className="text-[#3b78e7]" />
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <div className="text-3xl font-light text-gray-900">{tokens.cost}</div>
-                  <div className="text-xs text-gray-500 mt-1">Estimated OpenRouter usage</div>
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition hover:shadow-md">
+                <div className="flex justify-between items-center mb-5 text-gray-300 uppercase text-[9px] font-black tracking-[0.2em]">
+                    <span>Tokens</span>
+                    <Zap size={14} className="text-yellow-500" />
                 </div>
-                <div className="text-[11px] text-gray-400 font-mono">
-                  I: {tokens.input.toLocaleString()} / O: {tokens.output.toLocaleString()}
-                </div>
-              </div>
+                <div className="text-3xl font-black text-gray-900">{tokens.input.toLocaleString()}</div>
+                <div className="text-[9px] text-gray-400 mt-2 uppercase font-black tracking-widest">Global usage</div>
             </div>
-
-            <div className="bg-white p-5 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-              <div className="flex justify-between items-start mb-4 text-sm uppercase tracking-wider font-semibold text-gray-700">
-                System Info
-              </div>
-              <div className="space-y-3">
-                <div className="text-xs font-medium text-gray-600 uppercase">Current User</div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">RG</div>
-                  <span className="text-sm font-bold truncate">Raveendra Guntupalli</span>
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm transition hover:shadow-md">
+                <div className="flex justify-between items-center mb-5 text-gray-300 uppercase text-[9px] font-black tracking-[0.2em]">
+                    <span>Account</span>
+                    <CreditCard size={14} className="text-emerald-500" />
                 </div>
-                <div className="text-[11px] text-gray-400 pt-2 flex items-center">
-                  <Zap size={10} className="mr-1" />
-                  Uptime: 4 days, 12 hours
-                </div>
-              </div>
+                <div className="text-3xl font-black text-gray-900 uppercase">{tokens.cost}</div>
+                <div className="text-[9px] text-gray-400 mt-2 uppercase font-black tracking-widest">Estimated Bill</div>
             </div>
           </div>
         );
-      case 'Sub-Agents':
+      case 'Logs & Observability':
         return (
-          <div className="bg-white rounded border border-gray-200 shadow-sm overflow-hidden flex flex-col">
-            <div className="px-5 py-4 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
-              <h3 className="font-semibold text-gray-700 uppercase text-xs tracking-wider font-bold">Manage Sub-Agents</h3>
-              <div className="flex space-x-2">
-                <button className="flex items-center space-x-1 text-xs bg-white border border-gray-300 px-3 py-1.5 rounded shadow-sm hover:bg-gray-50 font-medium">
-                  <RefreshCw size={12} />
-                  <span>REFRESH</span>
-                </button>
-                <button className="flex items-center space-x-1 text-xs bg-[#3b78e7] text-white px-3 py-1.5 rounded shadow-sm hover:bg-[#1a5edb] font-medium">
-                  <Plus size={12} />
-                  <span>SPAWN NEW AGENT</span>
-                </button>
-              </div>
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden flex flex-col h-[600px]">
+             <div className="px-6 py-4 border-b border-gray-50 bg-gray-50/50 flex justify-between items-center">
+              <h3 className="font-black text-gray-800 uppercase text-[10px] tracking-widest flex items-center space-x-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span>Observability Feed</span>
+              </h3>
+              <div className="text-[9px] font-black text-gray-400 uppercase tracking-widest">LIVE • 127.0.0.1</div>
             </div>
-            <div className="flex-1 p-0 overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-gray-50 text-gray-500 text-[11px] font-bold uppercase border-b border-gray-100">
-                  <tr>
-                    <th className="px-5 py-3">NAME</th>
-                    <th className="px-5 py-3">STATUS</th>
-                    <th className="px-5 py-3">CURRENT TASK</th>
-                    <th className="px-5 py-3">UPTIME</th>
-                    <th className="px-5 py-3 text-right">ACTIONS</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100 text-sm">
-                  {agents.map(agent => (
-                    <tr key={agent.id} className="hover:bg-blue-50/50 transition cursor-pointer group">
-                      <td className="px-5 py-4">
-                        <div className="flex flex-col">
-                          <span className="font-bold text-[#3b78e7]">@{agent.id}</span>
-                          <span className="text-[11px] text-gray-400 uppercase tracking-tighter">{agent.type}</span>
-                        </div>
-                      </td>
-                      <td className="px-5 py-4">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                          <span className="text-xs font-semibold text-emerald-700 uppercase bg-emerald-50 px-2 py-0.5 rounded leading-none border border-emerald-100 tracking-tight">{agent.status}</span>
-                        </div>
-                      </td>
-                      <td className="px-5 py-4 text-gray-600 truncate max-w-[200px] font-medium italic">"{agent.task}"</td>
-                      <td className="px-5 py-4 text-xs font-mono text-gray-500">{agent.uptime}</td>
-                      <td className="px-5 py-4 text-right">
-                        <button className="text-gray-400 hover:text-[#3b78e7] px-2 py-1"><ExternalLink size={14} /></button>
-                        <button className="text-gray-400 hover:text-red-600 px-2 py-1"><Terminal size={14} /></button>
-                      </td>
+            <div className="flex-1 overflow-y-auto font-mono text-[11px]">
+              <table className="w-full text-left">
+                  <thead className="bg-gray-50 sticky top-0 border-b border-gray-100 text-gray-300 uppercase text-[9px] font-black tracking-widest">
+                    <tr>
+                      <th className="px-6 py-3">ID</th>
+                      <th className="px-6 py-3">Agent Layer</th>
+                      <th className="px-6 py-3 text-right">Context</th>
                     </tr>
-                  ))}
-                </tbody>
+                  </thead>
+                  <tbody className="divide-y divide-gray-50">
+                    {sessions.length === 0 ? (
+                      <tr><td colSpan="3" className="px-6 py-12 text-center text-gray-400 font-black uppercase tracking-widest text-[10px]">No active sessions found</td></tr>
+                    ) : sessions.map(s => (
+                      <tr key={s.sessionId} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-5">
+                            <div className="font-black text-[#3b78e7]">{s.sessionId.slice(0,8)}</div>
+                            <div className="text-[9px] text-gray-400 uppercase font-black tracking-tighter">{new Date(s.updatedAt).toLocaleTimeString()}</div>
+                        </td>
+                        <td className="px-6 py-5 flex flex-col items-start">
+                          <span className="text-[10px] font-black text-gray-800 uppercase tracking-widest bg-gray-100 px-1.5 py-0.5 rounded mb-1">{s.agentId} | {s.kind}</span>
+                          <span className="text-[8px] text-gray-400 font-bold truncate max-w-[150px] tracking-tight">{s.model.split('/').pop()}</span>
+                        </td>
+                        <td className="px-6 py-5 text-right">
+                          <div className="font-black text-gray-900">{s.totalTokens.toLocaleString()}</div>
+                          <div className="text-[9px] text-gray-400 uppercase font-black tracking-tighter">TOKENS</div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
               </table>
             </div>
           </div>
         );
       default:
-        return (
-          <div className="bg-white p-12 rounded border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center space-y-4">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-[#3b78e7]">
-              <Settings size={32} />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800 uppercase tracking-tight">{activeTab}</h3>
-            <p className="text-gray-500 max-w-sm">
-              This module is currently being provisioned. OpenClaw is mapping the internal resources for <strong>{activeTab}</strong>.
-            </p>
-            <button 
-              onClick={() => setActiveTab('Dashboard')}
-              className="text-sm font-semibold text-[#3b78e7] hover:underline uppercase"
-            >
-              Back to Dashboard
-            </button>
-          </div>
-        );
+        return <div className="p-10 text-center text-gray-300 uppercase text-[10px] font-black tracking-[0.4em] italic">Dashboard Ready</div>;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col">
-      {/* Header */}
-      <header className="h-12 bg-[#3b78e7] text-white flex items-center justify-between px-4 z-50 shadow-md flex-shrink-0">
-        <div className="flex items-center space-x-4">
-          <button 
-            onClick={() => setSidebarOpen(!isSidebarOpen)}
-            className="p-1 hover:bg-[#1a5edb] rounded transition"
-          >
-            <Menu size={20} />
-          </button>
-          <div className="flex items-center space-x-2 select-none pointer-events-none">
-            <Zap size={20} className="text-yellow-300 fill-yellow-300" />
-            <span className="font-semibold text-lg">Rave</span>
-            <span className="text-gray-200">|</span>
-            <span className="font-light">OpenClaw Command Center</span>
-            <ChevronDown size={14} className="ml-1 opacity-80" />
+    <div className="min-h-screen bg-gray-50/50 text-gray-900 font-sans flex flex-col">
+      <header className="h-14 bg-gray-900 text-white flex items-center justify-between px-8 shadow-2xl z-50">
+        <div className="flex items-center space-x-6">
+          <Menu size={22} className="cursor-pointer hover:text-blue-400 transition" onClick={() => setSidebarOpen(!isSidebarOpen)} />
+          <div className="flex items-center space-x-2">
+            <div className="w-6 h-6 bg-yellow-400 rounded-sm flex items-center justify-center text-black shadow-lg shadow-yellow-900/20">
+                <Zap size={16} fill="currentColor" />
+            </div>
+            <span className="font-black uppercase tracking-[0.2em] text-sm">System Architect</span>
           </div>
         </div>
-
-        <div className="flex-1 max-w-2xl mx-8">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white opacity-70" size={16} />
-            <input 
-              type="text" 
-              placeholder="Search sub-agents, tasks, or settings" 
-              className="w-full bg-[#528af0] text-white placeholder-white/70 border-none rounded px-10 py-1 text-sm focus:ring-1 focus:ring-white outline-none transition"
-            />
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <HelpCircle size={18} className="opacity-80 hover:opacity-100 cursor-pointer" />
-          <Bell size={18} className="opacity-80 hover:opacity-100 cursor-pointer" />
-          <Settings size={18} className="opacity-80 hover:opacity-100 cursor-pointer" />
-          <div className="w-8 h-8 rounded-full bg-white/20 border border-white/40 flex items-center justify-center font-bold text-xs cursor-pointer hover:bg-white/30 transition">
-            RG
-          </div>
+        <div className="hidden md:flex items-center space-x-3 text-[10px] font-black bg-white/5 px-5 py-2 rounded-full border border-white/10 uppercase tracking-widest leading-none">
+            <span className="text-gray-500">{systemInfo.user}</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+            <span className="text-emerald-400">{systemInfo.serviceStatus}</span>
         </div>
       </header>
 
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <aside className={`${isSidebarOpen ? 'w-64' : 'w-0'} bg-white border-r border-gray-200 flex flex-col overflow-hidden transition-all duration-300 ease-in-out flex-shrink-0`}>
-          <nav className="flex-1 space-y-1 pt-4 overflow-y-auto">
-            <SidebarItem 
-              icon={<LayoutDashboard size={18} />} 
-              label="Dashboard" 
-              active={activeTab === 'Dashboard'} 
-              onClick={() => setActiveTab('Dashboard')}
-            />
-            <SidebarItem 
-              icon={<Users size={18} />} 
-              label="Sub-Agents" 
-              active={activeTab === 'Sub-Agents'} 
-              onClick={() => setActiveTab('Sub-Agents')}
-            />
-            <SidebarItem 
-              icon={<CreditCard size={18} />} 
-              label="Billing & Tokens" 
-              active={activeTab === 'Billing & Tokens'} 
-              onClick={() => setActiveTab('Billing & Tokens')}
-            />
-            <SidebarItem 
-              icon={<Activity size={18} />} 
-              label="Logs & Observability" 
-              active={activeTab === 'Logs & Observability'} 
-              onClick={() => setActiveTab('Logs & Observability')}
-            />
-            <SidebarItem 
-              icon={<Terminal size={18} />} 
-              label="Terminal Access" 
-              active={activeTab === 'Terminal Access'} 
-              onClick={() => setActiveTab('Terminal Access')}
-            />
-            <div className="pt-4 pb-2 px-4 text-xs font-bold text-gray-400 uppercase tracking-widest leading-none">
-              Pinned Resources
-            </div>
-            <SidebarItem icon={<Grid size={18} />} label="@codex" onClick={() => setActiveTab('Sub-Agents')} />
-            <SidebarItem icon={<Grid size={18} />} label="@main" onClick={() => setActiveTab('Sub-Agents')} />
+        <aside className={`${isSidebarOpen ? 'w-64' : 'w-0'} bg-white border-r border-gray-100 transition-all flex flex-col overflow-hidden`}>
+          <nav className="flex-1 pt-8 px-6 space-y-4">
+             <SidebarItem icon={<LayoutDashboard size={20} />} label="Overview" active={activeTab === 'Dashboard'} onClick={() => setActiveTab('Dashboard')} />
+             <SidebarItem icon={<Activity size={20} />} label="Observability" active={activeTab === 'Logs & Observability'} onClick={() => setActiveTab('Logs & Observability')} />
+             <div className="pt-4 mt-4 border-t border-gray-50 font-black text-[9px] text-gray-300 uppercase tracking-[0.3em] px-2 mb-2">Systems</div>
+             <SidebarItem icon={<Users size={20} />} label="Agents" onClick={() => setActiveTab('Agents')} />
+             <SidebarItem icon={<CreditCard size={20} />} label="Billing" onClick={() => setActiveTab('Billing')} />
+             <SidebarItem icon={<RefreshCw size={20} />} label="Crons" onClick={() => setActiveTab('Cron Jobs')} />
           </nav>
         </aside>
 
-        {/* Main Content Area */}
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-50 flex flex-col">
-          <div className="max-w-6xl w-full mx-auto space-y-6">
-            <div className="flex items-center text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1 space-x-2">
-              <span className="hover:text-[#3b78e7] cursor-pointer transition">OpenClaw</span>
-              <span>/</span>
-              <span className="text-gray-900 underline underline-offset-4 decoration-[#3b78e7] decoration-2">{activeTab}</span>
+        <main className="flex-1 overflow-y-auto p-12 flex justify-center bg-[#fafbfc]">
+          <div className="max-w-4xl w-full">
+            <div className="flex items-center text-[10px] font-black text-gray-300 uppercase tracking-[0.4em] mb-10 pl-1">
+              {activeTab} • Active Session
             </div>
-
             {renderContent()}
-
-            <div className="bg-blue-50 border border-blue-100 p-4 rounded flex items-center justify-between shadow-inner mt-8">
-              <div className="flex items-center space-x-3">
-                <HelpCircle className="text-[#3b78e7]" size={20} />
-                <span className="text-sm text-blue-800 font-medium">New sub-agent capability unlocked! Use <strong>sessions_spawn</strong> for specialized tasks.</span>
-              </div>
-              <button className="text-xs bg-[#3b78e7] text-white px-4 py-1.5 rounded font-bold hover:shadow-lg transition">DOCUMENTATION</button>
-            </div>
           </div>
         </main>
       </div>
@@ -280,16 +241,10 @@ function App() {
 const SidebarItem = ({ icon, label, active = false, onClick }) => (
   <button 
     onClick={onClick}
-    className={`
-      w-full flex items-center space-x-4 px-4 py-2 text-sm cursor-pointer transition border-l-4 border-transparent outline-none
-      ${active 
-        ? 'bg-blue-50/80 border-[#3b78e7] text-[#3b78e7] font-bold shadow-inner' 
-        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border-transparent'
-      }
-    `}
+    className={`w-full flex items-center space-x-4 px-4 py-3 rounded-xl text-xs transition-all ${active ? 'bg-gray-900 text-white font-black shadow-xl' : 'text-gray-400 hover:bg-gray-50 hover:text-gray-900'}`}
   >
-    <span className={active ? 'text-[#3b78e7]' : 'text-gray-400'}>{icon}</span>
-    <span className="flex-1 text-left uppercase tracking-tighter text-xs font-bold">{label}</span>
+    <div className={`${active ? 'text-yellow-400' : 'text-gray-300'}`}>{icon}</div>
+    <span className="uppercase tracking-widest">{label}</span>
   </button>
 );
 
