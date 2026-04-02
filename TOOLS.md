@@ -19,6 +19,10 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## Coding Model Defaults
+
+- **Codex / ACP Tasks:** `openrouter/qwen/qwen3-coder` (Dedicated model for all coding)
+
 ## Examples
 
 ```markdown
