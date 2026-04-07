@@ -1,0 +1,22 @@
+{
+  "deals": [
+    {
+      "id": "1",
+      "model": "Sony Bravia XR 65\"",
+      "currentPrice": 999.99,
+      "originalPrice": 1299.99,
+      "discountPct": 23,
+      "retailerLink": "https://example.com/sony-bravia",
+      "imageUrl": "https://example.com/sony.jpg"
+    },
+    {
+      "id": "2",
+      "model": "LG OLED C3 55\"",
+      "currentPrice": 1299.00,
+      "originalPrice": 1499.00,
+      "discountPct": 13,
+      "retailerLink": "https://example.com/lg-oled",
+      "imageUrl": "https://example.com/lg.jpg"
+    }
+  ]
+}

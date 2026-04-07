@@ -19,9 +19,8 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
-## Coding Model Defaults
-
-- **Codex / ACP Tasks:** `openrouter/qwen/qwen3-coder` (Dedicated model for all coding)
+## Discord
+- Guild ID: 1489780965789139125
 
 ## Examples
 
