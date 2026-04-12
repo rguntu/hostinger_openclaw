@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-12T03:20:09.940Z",
+  "entries": {
+    "memory:memory/2026-04-05.md:1:16": {
+      "key": "memory:memory/2026-04-05.md:1:16",
+      "path": "memory/2026-04-05.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "# Memory Flush - 2026-04-05 ## Context - **User:** Raveendra Guntupalli (Rave). - **Current Project:** iOS TV Price Comparison App. - **Discord Infrastructure:** Transitioned from DM session to a dedicated server (Guild ID: 1489780965789139125) with specialized channels (#dashboard, #inbox, #code-work, #research, #logs, #tvappp). - **Configuration Change:** Successfully updated `openclaw.json` to include `pa-rave-assistant` in the allowed agents list to enable specialized sub-agent spawning. - **Technical Hurdles:** Resolved routing issues where the `message` tool was previously locked to DM sessions; configuration is now optimized for the new server structure. ## Action Items/Decisions -",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "totalScore": 1.2739695787429808,
+      "maxScore": 0.4422798573970794,
+      "firstRecalledAt": "2026-04-12T02:51:58.296Z",
+      "lastRecalledAt": "2026-04-12T03:20:09.940Z",
+      "queryHashes": [
+        "d5f88f9920a6",
+        "7f6d140245dc",
+        "ff04a4a83f2d"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "code-work",
+        "openclaw.json",
+        "pa-rave-assistant",
+        "sub-agent",
+        "items/decisions",
+        "flush",
+        "context",
+        "user"
+      ]
+    },
+    "memory:memory/2026-03-26.md:1:9": {
+      "key": "memory:memory/2026-03-26.md:1:9",
+      "path": "memory/2026-03-26.md",
+      "startLine": 1,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "# 2026-03-26 - Initialized workspace. - Identified as **fig**, the Precise Architect ⚡. - Human is **Rave**. - Created Discord channel `#ai-stock-research` (ID: 1486605655409299558). - Authored `ai-stock-architect` skill focusing on AI supply chain moats. - Scheduled daily 7 AM PST research reports. - Hardened security on `auth-profiles.json`.",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "totalScore": 1.2779414653778076,
+      "maxScore": 0.44095560312271115,
+      "firstRecalledAt": "2026-04-12T02:51:58.296Z",
+      "lastRecalledAt": "2026-04-12T03:20:09.940Z",
+      "queryHashes": [
+        "d5f88f9920a6",
+        "7f6d140245dc",
+        "ff04a4a83f2d"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "ai-stock-research",
+        "ai-stock-architect",
+        "auth-profiles.json",
+        "initialized",
+        "identified",
+        "fig",
+        "the",
+        "precise"
+      ]
+    },
+    "memory:memory/2026-04-06.md:1:18": {
+      "key": "memory:memory/2026-04-06.md:1:18",
+      "path": "memory/2026-04-06.md",
+      "startLine": 1,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "## 2026-04-06 Session Log (Fig, the Precise Architect) ### 🚀 Key Activity - **Architecture Setup:** Established explicit organizational pillars in the workspace directory (`engineering/`, `research/`, `admin/`) with corresponding README documentation. - **Telegram Orchestration:** - Configured project-specific topics in Telegram Supergroup `-1003555588067` (`Engineering`, `Research`, `System-Admin`). - Updated `openclaw.json` to set `requireMention: false` for the Telegram channel, allowing seamless interaction without needing to @ me. - **System Maintenance:** Addressed binary PATH/linkage issues following version updates and successfully updated to OpenClaw 2026.4.2. - **Discord Inte",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "totalScore": 1.2786816984415053,
+      "maxScore": 0.4388919711112976,
+      "firstRecalledAt": "2026-04-12T02:51:58.296Z",
+      "lastRecalledAt": "2026-04-12T03:20:09.940Z",
+      "queryHashes": [
+        "d5f88f9920a6",
+        "7f6d140245dc",
+        "ff04a4a83f2d"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "project-specific",
+        "system-admin",
+        "openclaw.json",
+        "path/linkage",
+        "2026.4.2",
+        "log",
+        "fig",
+        "the"
+      ]
+    },
+    "memory:memory/2026-03-31.md:1:19": {
+      "key": "memory:memory/2026-03-31.md:1:19",
+      "path": "memory/2026-03-31.md",
+      "startLine": 1,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "## 2026-03-31 Session Log (Fig, the Precise Architect) ### 🚀 Key Activity - **Dashboard Construction:** Initiated a \"Uber Eats-style\" OpenClaw dashboard build in `~/workspace/dashboard/` using React, Vite, and Tailwind CSS. - **Agent Orchestration:** Spawned a Codex (ACP) session (`d872726a`) to handle scaffolding and UI component development. - **Infrastructure Setup:** Created `#openclaw-dashboard-lab` channel for dedicated engineering logs and coordination. - **Reliability Engineering:** Updated `backup_workspace.sh` and `HEARTBEAT.md` with an emergency retry mechanism to ensure Git syncs occur even if a daily cron is missed. - **System Monitoring:** Deployed `keep_awake.sh` background",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.43865427374839777,
+      "maxScore": 0.43865427374839777,
+      "firstRecalledAt": "2026-04-12T02:51:58.296Z",
+      "lastRecalledAt": "2026-04-12T02:51:58.296Z",
+      "queryHashes": [
+        "d5f88f9920a6"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "backup",
+        "eats-style",
+        "workspace/dashboard",
+        "openclaw-dashboard-lab",
+        "backup-workspace.sh",
+        "heartbeat.md",
+        "keep-awake.sh",
+        "log"
+      ]
+    },
+    "memory:memory/2026-03-24.md:1:3": {
+      "key": "memory:memory/2026-03-24.md:1:3",
+      "path": "memory/2026-03-24.md",
+      "startLine": 1,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "-e - 2026-03-24: OpenClaw Docker wrapper script (/entrypoint.sh calling /hostinger/server.mjs) overwrites default models to standard Gemini if GEMINI_API_KEY is present. OpenRouter default config won't persist unless OPENROUTER_API_KEY is provided as an env var to the Docker container or server.mjs is modified.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.3926904588937759,
+      "maxScore": 0.3926904588937759,
+      "firstRecalledAt": "2026-04-12T03:20:09.940Z",
+      "lastRecalledAt": "2026-04-12T03:20:09.940Z",
+      "queryHashes": [
+        "ff04a4a83f2d"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "router",
+        "entrypoint.sh",
+        "hostinger/server.mjs",
+        "gemini-api-key",
+        "openrouter-api-key",
+        "server.mjs",
+        "openclaw",
+        "docker"
+      ]
+    }
+  }
+}
