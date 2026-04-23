@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T22:19:58.380Z",
+  "updatedAt": "2026-04-19T22:44:19.639Z",
   "entries": {
     "memory:memory/2026-04-05.md:1:16": {
       "key": "memory:memory/2026-04-05.md:1:16",
@@ -9,21 +9,23 @@
       "endLine": 16,
       "source": "memory",
       "snippet": "# Memory Flush - 2026-04-05 ## Context - **User:** Raveendra Guntupalli (Rave). - **Current Project:** iOS TV Price Comparison App. - **Discord Infrastructure:** Transitioned from DM session to a dedicated server (Guild ID: 1489780965789139125) with specialized channels (#dashboard, #inbox, #code-work, #research, #logs, #tvappp). - **Configuration Change:** Successfully updated `openclaw.json` to include `pa-rave-assistant` in the allowed agents list to enable specialized sub-agent spawning. - **Technical Hurdles:** Resolved routing issues where the `message` tool was previously locked to DM sessions; configuration is now optimized for the new server structure. ## Action Items/Decisions -",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
-      "totalScore": 1.742237117886543,
+      "totalScore": 2.1691600650548932,
       "maxScore": 0.4682675391435623,
       "firstRecalledAt": "2026-04-12T02:51:58.296Z",
-      "lastRecalledAt": "2026-04-17T22:19:58.380Z",
+      "lastRecalledAt": "2026-04-19T22:07:04.345Z",
       "queryHashes": [
         "d5f88f9920a6",
         "7f6d140245dc",
         "ff04a4a83f2d",
-        "0e4c08670d62"
+        "0e4c08670d62",
+        "d93cb0367e5a"
       ],
       "recallDays": [
         "2026-04-11",
-        "2026-04-17"
+        "2026-04-17",
+        "2026-04-19"
       ],
       "conceptTags": [
         "code-work",
@@ -43,21 +45,23 @@
       "endLine": 9,
       "source": "memory",
       "snippet": "# 2026-03-26 - Initialized workspace. - Identified as **fig**, the Precise Architect ⚡. - Human is **Rave**. - Created Discord channel `#ai-stock-research` (ID: 1486605655409299558). - Authored `ai-stock-architect` skill focusing on AI supply chain moats. - Scheduled daily 7 AM PST research reports. - Hardened security on `auth-profiles.json`.",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
-      "totalScore": 1.7358224809169769,
+      "totalScore": 2.1885756254196167,
       "maxScore": 0.45788101553916927,
       "firstRecalledAt": "2026-04-12T02:51:58.296Z",
-      "lastRecalledAt": "2026-04-17T22:19:58.380Z",
+      "lastRecalledAt": "2026-04-19T22:07:04.345Z",
       "queryHashes": [
         "d5f88f9920a6",
         "7f6d140245dc",
         "ff04a4a83f2d",
-        "0e4c08670d62"
+        "0e4c08670d62",
+        "d93cb0367e5a"
       ],
       "recallDays": [
         "2026-04-11",
-        "2026-04-17"
+        "2026-04-17",
+        "2026-04-19"
       ],
       "conceptTags": [
         "ai-stock-research",
@@ -164,6 +168,66 @@
         "server.mjs",
         "openclaw",
         "docker"
+      ]
+    },
+    "memory:memory/2026-04-15.md:1:12": {
+      "key": "memory:memory/2026-04-15.md:1:12",
+      "path": "memory/2026-04-15.md",
+      "startLine": 1,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "# Durable Memory - 2026-04-15 ## Telegram Group Integration - Finalized architecture for a \"Personal Dev Team\" Telegram group. - Group configured with `requireMention: true` globally via `openclaw.json` to reduce noise. - Implemented topic-specific overrides (as seen in user-provided screenshot JSON) allowing mention-less interaction in specific topic IDs. - User is currently troubleshooting persistent configuration application (gateway auto-revert issue). - Confirmed target Telegram Group ID: -1003980268347. - User maintains strict control over permissions (allowlist policy for sender ID 7928068113). - User requested a total stop of the OpenClaw service at 2026-04-14 20:24 PDT.",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "totalScore": 0.8885535478591918,
+      "maxScore": 0.4442767739295959,
+      "firstRecalledAt": "2026-04-19T22:43:54.713Z",
+      "lastRecalledAt": "2026-04-19T22:44:19.639Z",
+      "queryHashes": [
+        "87835653f7f7"
+      ],
+      "recallDays": [
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "gateway",
+        "openclaw.json",
+        "topic-specific",
+        "user-provided",
+        "mention-less",
+        "auto-revert",
+        "durable",
+        "telegram"
+      ]
+    },
+    "memory:memory/2026-04-19.md:1:6": {
+      "key": "memory:memory/2026-04-19.md:1:6",
+      "path": "memory/2026-04-19.md",
+      "startLine": 1,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "# 2026-04-19 - Added group -1003960488406, topic 'dev', and agent 'dev' to workspace configuration. - Created 'dev' topic in group -1003960488406. - Added topic 'dev' for Raveendra Guntupalli.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.47168467342853543,
+      "maxScore": 0.47168467342853543,
+      "firstRecalledAt": "2026-04-19T22:44:19.639Z",
+      "lastRecalledAt": "2026-04-19T22:44:19.639Z",
+      "queryHashes": [
+        "87835653f7f7"
+      ],
+      "recallDays": [
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "added",
+        "group",
+        "topic",
+        "dev",
+        "configuration",
+        "created",
+        "raveendra",
+        "guntupalli"
       ]
     }
   }
