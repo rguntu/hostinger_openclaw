@@ -1,0 +1,288 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "contextTokens": 100000,
+      "heartbeat": {
+        "every": "1h",
+        "model": "google/gemini-3.1-flash-lite"
+      },
+      "memorySearch": {
+        "model": "google/gemini-embedding-2.0",
+        "provider": "google",
+        "remote": {
+          "apiKey": "AIzaSyBIcVTU43mRoVba2hA4AzBTJh50jtIsT-I"
+        }
+      },
+      "model": {
+        "primary": "google/gemini-3.1-flash-lite",
+        "fallbacks": [
+          "google/gemini-3.1-pro",
+          "google/gemini-2.5-flash"
+        ]
+      },
+      "models": {
+        "google/gemini-3.1-pro": {
+          "alias": "Gemini 3.1 Pro (Premium)"
+        },
+        "google/gemini-3.1-flash-lite": {
+          "alias": "Gemini 3.1 Flash Lite (Utility)"
+        },
+        "google/gemini-2.5-flash": {
+          "alias": "Gemini 2.5 Flash"
+        },
+        "google/gemma-4-31b": {
+          "alias": "Gemma 4 31B (Open)"
+        }
+      },
+      "subagents": {
+        "model": "google/gemini-3.1-flash-lite"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "name": "main",
+        "model": {
+          "primary": "google/gemini-3.1-flash-lite",
+          "fallbacks": [
+            "google/gemini-3.1-pro"
+          ]
+        }
+      },
+      {
+        "id": "stock-researcher",
+        "name": "AI Stock Researcher",
+        "model": {
+          "primary": "google/gemini-3.1-pro",
+          "fallbacks": [
+            "google/gemini-3.1-flash-lite"
+          ]
+        }
+      },
+      {
+        "id": "test-bot",
+        "name": "Test Bot",
+        "model": {
+          "primary": "google/gemini-3.1-flash-lite",
+          "fallbacks": [
+            "google/gemini-3.1-pro"
+          ]
+        }
+      },
+      {
+        "id": "topic-agent-bot",
+        "name": "Topic Agent Bot",
+        "model": {
+          "primary": "google/gemini-3.1-flash-lite",
+          "fallbacks": [
+            "google/gemini-3.1-pro"
+          ]
+        }
+      }
+    ]
+  },
+  "browser": {
+    "defaultProfile": "openclaw",
+    "enabled": true,
+    "headless": true,
+    "noSandbox": true
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "groupPolicy": "allowlist",
+      "guilds": {
+        "1489780965789139125": {}
+      },
+      "streaming": "off",
+      "threadBindings": {
+        "spawnAcpSessions": true
+      },
+      "token": "REDACTED"
+    },
+    "telegram": {
+      "accounts": {
+        "default": {
+          "botToken": "REDACTED"
+        },
+        "fun-bot": {
+          "botToken": "REDACTED"
+        }
+      },
+      "dmPolicy": "pairing",
+      "enabled": true,
+      "groupPolicy": "open",
+      "streaming": "partial",
+      "groups": {
+        "*": {
+          "requireMention": true
+        },
+        "-1003990377539": {
+          "requireMention": false,
+          "topics": {
+            "4": {
+              "agentId": "main"
+            }
+          }
+        },
+        "-1003839355873": {
+          "requireMention": false,
+          "topics": {
+            "13": {
+              "agentId": "stock-researcher"
+            },
+            "52": {
+              "agentId": "fun-bot"
+            },
+            "99": {
+              "agentId": "test-bot"
+            },
+            "panda": {
+              "agentId": "topic-agent-bot"
+            },
+            "test2": {
+              "agentId": "topic-agent-bot"
+            },
+            "test3": {
+              "agentId": "topic-agent-bot"
+            }
+          }
+        }
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "fun-bot",
+      "match": {
+        "channel": "telegram",
+        "accountId": "fun-bot"
+      }
+    }
+  ],
+  "commands": {
+    "bash": true,
+    "native": "auto",
+    "nativeSkills": "auto",
+    "ownerDisplay": "raw",
+    "restart": true
+  },
+  "env": {
+    "CT0": "35f58b67c68253410596bfa77e862b4f4b17fc53473435cd892dc9f02b2cf79dece9bd015fc780e8204affcf729c173810ac184ca12e9e9a78dcb1515c8c11cd75d21e74a914f4af87600dc5ef18c9e0",
+    "GEMINI_API_KEY": "REDACTED",
+    "AUTH_TOKEN": "REDACTED"
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "rateLimit": {
+        "lockoutMs": 300000,
+        "maxAttempts": 10,
+        "windowMs": 60000
+      },
+      "token": "REDACTED"
+    },
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "http://localhost:18789",
+        "http://127.0.0.1:18789",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://192.168.1.83:5173",
+        "http://192.168.1.83:18789",
+        "http://192.168.1.83:5173/"
+      ]
+    },
+    "mode": "local",
+    "remote": {
+      "token": "REDACTED"
+    },
+    "tailscale": {
+      "mode": "off"
+    }
+  },
+  "hooks": {
+    "token": "REDACTED"
+  },
+  "meta": {
+    "lastTouchedAt": "2026-04-17T23:14:12.909Z",
+    "lastTouchedVersion": "2026.4.2"
+  },
+  "models": {
+    "mode": "merge"
+  },
+  "plugins": {
+    "allow": [
+      "whatsapp",
+      "discord",
+      "telegram",
+      "slack",
+      "nostr",
+      "googlechat",
+      "acpx",
+      "browser",
+      "openrouter",
+      "google",
+      "anthropic"
+    ],
+    "entries": {
+      "acpx": {
+        "enabled": true
+      },
+      "browser": {
+        "enabled": true
+      },
+      "discord": {
+        "enabled": true
+      },
+      "google": {
+        "enabled": true
+      },
+      "googlechat": {
+        "enabled": true
+      },
+      "imessage": {
+        "enabled": false
+      },
+      "nostr": {
+        "enabled": true
+      },
+      "openrouter": {
+        "enabled": true
+      },
+      "signal": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": true
+      },
+      "telegram": {
+        "enabled": true
+      },
+      "whatsapp": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {},
+  "update": {
+    "channel": "stable",
+    "checkOnStart": false
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-17T23:14:12.688Z",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.4.2"
+  }
+}
