@@ -63,23 +63,10 @@
         }
       },
       {
-        "id": "test-bot",
-        "name": "Test Bot",
+        "id": "tvapp",
+        "name": "TV App Agent",
         "model": {
-          "primary": "google/gemini-3.1-flash-lite",
-          "fallbacks": [
-            "google/gemini-3.1-pro"
-          ]
-        }
-      },
-      {
-        "id": "topic-agent-bot",
-        "name": "Topic Agent Bot",
-        "model": {
-          "primary": "google/gemini-3.1-flash-lite",
-          "fallbacks": [
-            "google/gemini-3.1-pro"
-          ]
+          "primary": "google/gemini-3.1-flash-lite"
         }
       }
     ]
@@ -125,6 +112,9 @@
           "topics": {
             "4": {
               "agentId": "main"
+            },
+            "20": {
+              "agentId": "tvapp"
             }
           }
         },
@@ -136,18 +126,6 @@
             },
             "52": {
               "agentId": "fun-bot"
-            },
-            "99": {
-              "agentId": "test-bot"
-            },
-            "panda": {
-              "agentId": "topic-agent-bot"
-            },
-            "test2": {
-              "agentId": "topic-agent-bot"
-            },
-            "test3": {
-              "agentId": "topic-agent-bot"
             }
           }
         }
