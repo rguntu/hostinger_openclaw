@@ -24,11 +24,11 @@ Things like:
 
 ### Telegram Groups
 
-- Dev Group: -1003960488406
+- OC_GROUP1: -1003839355873
   - 'dev2' thread: 44
   - Note: Issues with non-mention response policy; requires persistent listening.
 
-- Kids Group: -1003990377539
+- OC_GROUP2: -1003990377539
   - 'kid1' thread: (to be created)
   - Agent: kid1
   - requiremention: false
