@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Management Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body>
+    <div id="root">
+        <div class="app-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Agents Dashboard</span>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li class="nav-item active"><a href="#"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                        <li class="nav-item"><a href="#"><i class="fas fa-robot"></i><span>Agents</span></a></li>
+                        <li class="nav-item"><a href="#"><i class="fas fa-tasks"></i><span>Tasks</span></a></li>
+                        <li class="nav-item"><a href="#"><i class="fas fa-chart-bar"></i><span>Metrics</span></a></li>
+                        <li class="nav-item"><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <header class="top-header">
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search agents..." id="agent-search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="refresh-agents-btn">
+                            <i class="fas fa-sync-alt"></i> Refresh List
+                        </button>
+                        <div class="user-profile">
+                            <img src="https://via.placeholder.com/40x40" alt="User">
+                            <span>Admin</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="content-wrapper">
+                    <section class="cards-section">
+                        <div class="card-grid">
+                            <div class="card agents-count-card">
+                                <div class="card-content">
+                                    <div class="card-icon bg-primary">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="card-stats">
+                                        <h3 id="active-agents-count">12</h3>
+                                        <p>Active Agents</p>
+                                        <span class="positive">+3 this week</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card running-card">
+                                <div class="card-content">
+                                    <div class="card-icon bg-secondary">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <div class="card-stats">
+                                        <h3 id="running-agents-count">8</h3>
+                                        <p>Running Agents</p>
+                                        <span class="positive">+2 this hour</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card tasks-card">
+                                <div class="card-content">
+                                    <div class="card-icon bg-success">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div class="card-stats">
+                                        <h3 id="tasks-count">42</h3>
+                                        <p>Active Tasks</p>
+                                        <span class="positive">+5 since last fetch</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card avg-runtime-card">
+                                <div class="card-content">
+                                    <div class="card-icon bg-warning">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="card-stats">
+                                        <h3 id="avg-runtime">1h 24m</h3>
+                                        <p>Avg Runtime</p>
+                                        <span class="positive">-12% improvement</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="chart-section">
+                        <div class="card agents-chart-card">
+                            <div class="card-header">
+                                <h3>Agent States Overview</h3>
+                                <div class="chart-controls">
+                                    <button class="btn btn-small active" id="week-tab">Week</button>
+                                    <button class="btn btn-small" id="month-tab">Month</button>
+                                    <button class="btn btn-small" id="year-tab">Year</button>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="agentStatesChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="side-sections">
+                            <div class="status-breakdown">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Agent Status Breakdown</h3>
+                                    </div>
+                                    <div class="stats-content">
+                                        <div class="stat-item">
+                                            <div class="color-box bg-running"></div>
+                                            <span>Running</span>
+                                            <span class="stat-value" id="running-count">8</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="color-box bg-stopped"></div>
+                                            <span>Stopped</span>
+                                            <span class="stat-value" id="stopped-count">3</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="color-box bg-completed"></div>
+                                            <span>Completed</span>
+                                            <span class="stat-value" id="completed-count">1</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="color-box bg-error"></div>
+                                            <span>Error</span>
+                                            <span class="stat-value" id="error-count">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="agents-list-container">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Active Agents</h3>
+                                        <div class="table-controls">
+                                            <button class="btn btn-small" id="filter-running">Running</button>
+                                            <button class="btn btn-small" id="filter-stopped">Stopped</button>
+                                        </div>
+                                    </div>
+                                    <div class="agents-table">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Status</th>
+                                                    <th>Type</th>
+                                                    <th>Last Update</th>
+                                                    <th>Metrics</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="agents-table-body">
+                                                <!-- Agent rows will be populated by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Agent Detail Modal -->
+    <div class="modal-overlay" id="agent-detail-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-agent-name">Agent Details</h3>
+                <i class="fas fa-times close-modal" id="close-modal"></i>
+            </div>
+            <div class="modal-body">
+                <div class="agent-details-grid">
+                    <div class="detail-item">
+                        <label>Status:</label>
+                        <span id="modal-agent-status">Running</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Type:</label>
+                        <span id="modal-agent-type">AI Assistant</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Last Updated:</label>
+                        <span id="modal-agent-updated">Just now</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Runtime:</label>
+                        <span id="modal-agent-runtime">45m 32s</span>
+                    </div>
+                    <div class="metrics-section">
+                        <label>Key Metrics:</label>
+                        <div class="metrics-grid" id="modal-agent-metrics">
+                            <!-- Metrics will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="stop-agent-btn">Stop Agent</button>
+                <button class="btn btn-primary" id="start-agent-btn">Start Agent</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

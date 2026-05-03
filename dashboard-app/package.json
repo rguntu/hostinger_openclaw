@@ -1,0 +1,30 @@
+{
+  "name": "modern-dashboard",
+  "version": "1.0.0",
+  "description": "A modern dashboard application built with vanilla JS",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "http-server public/ -c-1",
+    "build": "echo 'Build step not implemented in this example'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dashboard",
+    "javascript",
+    "css",
+    "vanilla-js",
+    "frontend"
+  ],
+  "author": "Cherry Dashboard Builder",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

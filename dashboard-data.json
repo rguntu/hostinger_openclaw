@@ -1,0 +1,1718 @@
+{
+  "system_status": {
+    "gateway_state": "offline",
+    "timestamp": "2026-05-02T20:49:15.689465",
+    "uptime_seconds": 220
+  },
+  "task_queue": {
+    "incoming": 0,
+    "processing": 2,
+    "queued": 5,
+    "completed": 67,
+    "failed": 1
+  },
+  "performance": {
+    "avg_response_time_ms": 11537,
+    "success_rate": 98.53,
+    "collection_time": 11.537
+  },
+  "resources": {
+    "cpu": 68.9,
+    "memory_total": 16384.0,
+    "memory_available": 5257.83203125,
+    "memory_used": 9059.0078125,
+    "memory_percent": 67.9
+  },
+  "process_info": [],
+  "recent_activities": [
+    {
+      "timestamp": "2026-05-02T20:49:15.689575",
+      "datetime_str": "2026-05-02 20:49:15",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:48:59.136265",
+      "datetime_str": "2026-05-02 20:48:59",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:43:56.688899",
+      "datetime_str": "2026-05-02 20:43:56",
+      "message": "Stats collection completed - Gateway: RUNNING, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:43:41.991845",
+      "datetime_str": "2026-05-02 20:43:41",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:43:25.693584",
+      "datetime_str": "2026-05-02 20:43:25",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:28:15.012769",
+      "datetime_str": "2026-05-02 20:28:15",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:27:58.757972",
+      "datetime_str": "2026-05-02 20:27:58",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:27:42.435966",
+      "datetime_str": "2026-05-02 20:27:42",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:27:25.919519",
+      "datetime_str": "2026-05-02 20:27:25",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:27:08.239967",
+      "datetime_str": "2026-05-02 20:27:08",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:26:51.754172",
+      "datetime_str": "2026-05-02 20:26:51",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:26:34.999237",
+      "datetime_str": "2026-05-02 20:26:34",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:26:18.017853",
+      "datetime_str": "2026-05-02 20:26:18",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:26:00.745866",
+      "datetime_str": "2026-05-02 20:26:00",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:25:43.774866",
+      "datetime_str": "2026-05-02 20:25:43",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:25:26.208043",
+      "datetime_str": "2026-05-02 20:25:26",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:25:09.016840",
+      "datetime_str": "2026-05-02 20:25:09",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:24:52.490947",
+      "datetime_str": "2026-05-02 20:24:52",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:24:35.771912",
+      "datetime_str": "2026-05-02 20:24:35",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    },
+    {
+      "timestamp": "2026-05-02T20:24:19.170877",
+      "datetime_str": "2026-05-02 20:24:19",
+      "message": "Stats collection completed - Gateway: OFFLINE, Active processes: 0",
+      "level": "info",
+      "type": "info"
+    }
+  ],
+  "recent_logs": [
+    "[2026-05-02 20:49:15] INFO: Starting OpenClaw monitoring service",
+    "[2026-05-02 20:49:15] DEBUG: Connected to gateway",
+    "[2026-05-02 20:49:15] INFO: Task queue monitored - incoming: 2, processing: 1",
+    "[2026-05-02 20:49:15] WARN: High memory usage detected - 78% used"
+  ],
+  "historical_stats": [
+    {
+      "timestamp": "2026-05-02T20:17:37.255019",
+      "system": {
+        "utc_timestamp": 1777778257.255032,
+        "datetime_str": "2026-05-02 20:17:37"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 70.1,
+        "memory_total": 16384.0,
+        "memory_available": 5286.65625,
+        "memory_used": 9142.72265625,
+        "memory_percent": 67.7
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 1,
+        "completed": 97,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 11251,
+        "success_rate": 97.0,
+        "collection_time": 11.251
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:17:48.567195",
+      "system": {
+        "utc_timestamp": 1777778268.567271,
+        "datetime_str": "2026-05-02 20:17:48"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 62.8,
+        "memory_total": 16384.0,
+        "memory_available": 5368.55859375,
+        "memory_used": 9057.41015625,
+        "memory_percent": 67.2
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 0,
+        "queued": 9,
+        "completed": 47,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11311,
+        "success_rate": 100.0,
+        "collection_time": 11.311
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:18:04.992081",
+      "system": {
+        "utc_timestamp": 1777778284.992098,
+        "datetime_str": "2026-05-02 20:18:04"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 66.0,
+        "memory_total": 16384.0,
+        "memory_available": 5286.12109375,
+        "memory_used": 9137.29296875,
+        "memory_percent": 67.7
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 7,
+        "completed": 81,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11348,
+        "success_rate": 97.59,
+        "collection_time": 11.348
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:18:21.207703",
+      "system": {
+        "utc_timestamp": 1777778301.207725,
+        "datetime_str": "2026-05-02 20:18:21"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 66.1,
+        "memory_total": 16384.0,
+        "memory_available": 5223.3359375,
+        "memory_used": 9069.31640625,
+        "memory_percent": 68.1
+      },
+      "task_queue": {
+        "incoming": 5,
+        "processing": 1,
+        "queued": 8,
+        "completed": 60,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11212,
+        "success_rate": 96.77,
+        "collection_time": 11.212
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:18:37.756106",
+      "system": {
+        "utc_timestamp": 1777778317.756119,
+        "datetime_str": "2026-05-02 20:18:37"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 73.4,
+        "memory_total": 16384.0,
+        "memory_available": 5645.16796875,
+        "memory_used": 8672.59765625,
+        "memory_percent": 65.5
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 3,
+        "queued": 7,
+        "completed": 54,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11546,
+        "success_rate": 100.0,
+        "collection_time": 11.546
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:18:55.021417",
+      "system": {
+        "utc_timestamp": 1777778335.021438,
+        "datetime_str": "2026-05-02 20:18:55"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 71.9,
+        "memory_total": 16384.0,
+        "memory_available": 5240.3984375,
+        "memory_used": 9091.44140625,
+        "memory_percent": 68.0
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 2,
+        "queued": 5,
+        "completed": 99,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 12264,
+        "success_rate": 97.06,
+        "collection_time": 12.264
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:19:11.623466",
+      "system": {
+        "utc_timestamp": 1777778351.623483,
+        "datetime_str": "2026-05-02 20:19:11"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 74.4,
+        "memory_total": 16384.0,
+        "memory_available": 5068.21875,
+        "memory_used": 8899.66796875,
+        "memory_percent": 69.1
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 1,
+        "completed": 43,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11597,
+        "success_rate": 97.73,
+        "collection_time": 11.597
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:19:28.196372",
+      "system": {
+        "utc_timestamp": 1777778368.196395,
+        "datetime_str": "2026-05-02 20:19:28"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 64.2,
+        "memory_total": 16384.0,
+        "memory_available": 5082.73828125,
+        "memory_used": 8896.30078125,
+        "memory_percent": 69.0
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 1,
+        "queued": 8,
+        "completed": 70,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11570,
+        "success_rate": 98.59,
+        "collection_time": 11.57
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:19:44.738498",
+      "system": {
+        "utc_timestamp": 1777778384.738511,
+        "datetime_str": "2026-05-02 20:19:44"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 65.2,
+        "memory_total": 16384.0,
+        "memory_available": 4903.1015625,
+        "memory_used": 8722.71875,
+        "memory_percent": 70.1
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 3,
+        "queued": 6,
+        "completed": 21,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11540,
+        "success_rate": 91.3,
+        "collection_time": 11.54
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:20:01.773710",
+      "system": {
+        "utc_timestamp": 1777778401.773723,
+        "datetime_str": "2026-05-02 20:20:01"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 61.2,
+        "memory_total": 16384.0,
+        "memory_available": 4892.77734375,
+        "memory_used": 8663.51171875,
+        "memory_percent": 70.1
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 5,
+        "completed": 58,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12032,
+        "success_rate": 100.0,
+        "collection_time": 12.032
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:20:18.591857",
+      "system": {
+        "utc_timestamp": 1777778418.591873,
+        "datetime_str": "2026-05-02 20:20:18"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 65.0,
+        "memory_total": 16384.0,
+        "memory_available": 5279.09765625,
+        "memory_used": 8412.9765625,
+        "memory_percent": 67.8
+      },
+      "task_queue": {
+        "incoming": 0,
+        "processing": 2,
+        "queued": 10,
+        "completed": 39,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11816,
+        "success_rate": 95.12,
+        "collection_time": 11.816
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:20:35.769121",
+      "system": {
+        "utc_timestamp": 1777778435.769137,
+        "datetime_str": "2026-05-02 20:20:35"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 65.6,
+        "memory_total": 16384.0,
+        "memory_available": 4927.45703125,
+        "memory_used": 8628.4609375,
+        "memory_percent": 69.9
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 0,
+        "queued": 4,
+        "completed": 69,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 12172,
+        "success_rate": 98.57,
+        "collection_time": 12.172
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:20:54.172572",
+      "system": {
+        "utc_timestamp": 1777778454.172587,
+        "datetime_str": "2026-05-02 20:20:54"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 63.3,
+        "memory_total": 16384.0,
+        "memory_available": 5107.0546875,
+        "memory_used": 8429.05859375,
+        "memory_percent": 68.8
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 2,
+        "queued": 8,
+        "completed": 78,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 13400,
+        "success_rate": 97.5,
+        "collection_time": 13.4
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:21:11.341873",
+      "system": {
+        "utc_timestamp": 1777778471.341888,
+        "datetime_str": "2026-05-02 20:21:11"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 69.1,
+        "memory_total": 16384.0,
+        "memory_available": 4928.62890625,
+        "memory_used": 8710.81640625,
+        "memory_percent": 69.9
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 3,
+        "queued": 5,
+        "completed": 61,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 12165,
+        "success_rate": 98.39,
+        "collection_time": 12.165
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:21:28.753400",
+      "system": {
+        "utc_timestamp": 1777778488.7534149,
+        "datetime_str": "2026-05-02 20:21:28"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 62.7,
+        "memory_total": 16384.0,
+        "memory_available": 5229.26953125,
+        "memory_used": 8746.68359375,
+        "memory_percent": 68.1
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 1,
+        "queued": 1,
+        "completed": 52,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 12399,
+        "success_rate": 94.55,
+        "collection_time": 12.399
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:21:46.234305",
+      "system": {
+        "utc_timestamp": 1777778506.234327,
+        "datetime_str": "2026-05-02 20:21:46"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 72.7,
+        "memory_total": 16384.0,
+        "memory_available": 5197.95703125,
+        "memory_used": 8816.58984375,
+        "memory_percent": 68.3
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 0,
+        "queued": 7,
+        "completed": 67,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12475,
+        "success_rate": 100.0,
+        "collection_time": 12.475
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:22:03.742303",
+      "system": {
+        "utc_timestamp": 1777778523.7423518,
+        "datetime_str": "2026-05-02 20:22:03"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 71.5,
+        "memory_total": 16384.0,
+        "memory_available": 5118.05078125,
+        "memory_used": 8913.98046875,
+        "memory_percent": 68.8
+      },
+      "task_queue": {
+        "incoming": 5,
+        "processing": 0,
+        "queued": 1,
+        "completed": 79,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12355,
+        "success_rate": 100.0,
+        "collection_time": 12.355
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:22:20.965600",
+      "system": {
+        "utc_timestamp": 1777778540.9656372,
+        "datetime_str": "2026-05-02 20:22:20"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 75.0,
+        "memory_total": 16384.0,
+        "memory_available": 5134.12890625,
+        "memory_used": 8930.87890625,
+        "memory_percent": 68.7
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 3,
+        "queued": 3,
+        "completed": 22,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12216,
+        "success_rate": 100.0,
+        "collection_time": 12.216
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:22:38.226188",
+      "system": {
+        "utc_timestamp": 1777778558.226208,
+        "datetime_str": "2026-05-02 20:22:38"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 69.3,
+        "memory_total": 16384.0,
+        "memory_available": 5195.203125,
+        "memory_used": 8908.15234375,
+        "memory_percent": 68.3
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 1,
+        "queued": 10,
+        "completed": 37,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12245,
+        "success_rate": 100.0,
+        "collection_time": 12.245
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:22:55.419570",
+      "system": {
+        "utc_timestamp": 1777778575.4195871,
+        "datetime_str": "2026-05-02 20:22:55"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 68.2,
+        "memory_total": 16384.0,
+        "memory_available": 5259.7109375,
+        "memory_used": 8884.87109375,
+        "memory_percent": 67.9
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 0,
+        "queued": 4,
+        "completed": 84,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 12187,
+        "success_rate": 96.55,
+        "collection_time": 12.187
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:23:12.533413",
+      "system": {
+        "utc_timestamp": 1777778592.533427,
+        "datetime_str": "2026-05-02 20:23:12"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 73.5,
+        "memory_total": 16384.0,
+        "memory_available": 5434.4296875,
+        "memory_used": 8737.5,
+        "memory_percent": 66.8
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 3,
+        "queued": 6,
+        "completed": 76,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 12081,
+        "success_rate": 96.2,
+        "collection_time": 12.081
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:23:29.619696",
+      "system": {
+        "utc_timestamp": 1777778609.619711,
+        "datetime_str": "2026-05-02 20:23:29"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 70.6,
+        "memory_total": 16384.0,
+        "memory_available": 5225.52734375,
+        "memory_used": 8952.2109375,
+        "memory_percent": 68.1
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 0,
+        "queued": 3,
+        "completed": 100,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 11916,
+        "success_rate": 97.09,
+        "collection_time": 11.916
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:23:45.994840",
+      "system": {
+        "utc_timestamp": 1777778625.9948611,
+        "datetime_str": "2026-05-02 20:23:45"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 77.5,
+        "memory_total": 16384.0,
+        "memory_available": 5115.05078125,
+        "memory_used": 8893.12890625,
+        "memory_percent": 68.8
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 2,
+        "queued": 6,
+        "completed": 54,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 11253,
+        "success_rate": 94.74,
+        "collection_time": 11.253
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:24:02.700534",
+      "system": {
+        "utc_timestamp": 1777778642.700552,
+        "datetime_str": "2026-05-02 20:24:02"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 65.4,
+        "memory_total": 16384.0,
+        "memory_available": 5097.29296875,
+        "memory_used": 8857.109375,
+        "memory_percent": 68.9
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 2,
+        "queued": 3,
+        "completed": 94,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11701,
+        "success_rate": 100.0,
+        "collection_time": 11.701
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:24:19.170760",
+      "system": {
+        "utc_timestamp": 1777778659.170804,
+        "datetime_str": "2026-05-02 20:24:19"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 72.8,
+        "memory_total": 16384.0,
+        "memory_available": 5610.64453125,
+        "memory_used": 8299.7421875,
+        "memory_percent": 65.8
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 1,
+        "queued": 6,
+        "completed": 91,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11421,
+        "success_rate": 98.91,
+        "collection_time": 11.421
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:24:35.771834",
+      "system": {
+        "utc_timestamp": 1777778675.771849,
+        "datetime_str": "2026-05-02 20:24:35"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 66.4,
+        "memory_total": 16384.0,
+        "memory_available": 5318.44921875,
+        "memory_used": 8614.4453125,
+        "memory_percent": 67.5
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 7,
+        "completed": 38,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11596,
+        "success_rate": 97.44,
+        "collection_time": 11.596
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:24:52.490847",
+      "system": {
+        "utc_timestamp": 1777778692.4908621,
+        "datetime_str": "2026-05-02 20:24:52"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 66.8,
+        "memory_total": 16384.0,
+        "memory_available": 5138.73046875,
+        "memory_used": 8797.66796875,
+        "memory_percent": 68.6
+      },
+      "task_queue": {
+        "incoming": 5,
+        "processing": 1,
+        "queued": 8,
+        "completed": 53,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11713,
+        "success_rate": 100.0,
+        "collection_time": 11.713
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:25:09.016715",
+      "system": {
+        "utc_timestamp": 1777778709.016737,
+        "datetime_str": "2026-05-02 20:25:09"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 66.1,
+        "memory_total": 16384.0,
+        "memory_available": 5509.11328125,
+        "memory_used": 8364.63671875,
+        "memory_percent": 66.4
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 2,
+        "queued": 9,
+        "completed": 86,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11518,
+        "success_rate": 98.85,
+        "collection_time": 11.518
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:25:26.207944",
+      "system": {
+        "utc_timestamp": 1777778726.2079659,
+        "datetime_str": "2026-05-02 20:25:26"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 74.0,
+        "memory_total": 16384.0,
+        "memory_available": 5149.73046875,
+        "memory_used": 8767.0859375,
+        "memory_percent": 68.6
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 1,
+        "queued": 5,
+        "completed": 33,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 12182,
+        "success_rate": 91.67,
+        "collection_time": 12.182
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:25:43.774778",
+      "system": {
+        "utc_timestamp": 1777778743.774793,
+        "datetime_str": "2026-05-02 20:25:43"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 74.4,
+        "memory_total": 16384.0,
+        "memory_available": 5188.12109375,
+        "memory_used": 8805.1875,
+        "memory_percent": 68.3
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 3,
+        "queued": 6,
+        "completed": 86,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 12558,
+        "success_rate": 97.73,
+        "collection_time": 12.558
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:26:00.745778",
+      "system": {
+        "utc_timestamp": 1777778760.745794,
+        "datetime_str": "2026-05-02 20:26:00"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 72.5,
+        "memory_total": 16384.0,
+        "memory_available": 5351.234375,
+        "memory_used": 8656.8671875,
+        "memory_percent": 67.3
+      },
+      "task_queue": {
+        "incoming": 0,
+        "processing": 0,
+        "queued": 7,
+        "completed": 59,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11963,
+        "success_rate": 96.72,
+        "collection_time": 11.963
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:26:18.017758",
+      "system": {
+        "utc_timestamp": 1777778778.017776,
+        "datetime_str": "2026-05-02 20:26:18"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 68.9,
+        "memory_total": 16384.0,
+        "memory_available": 5443.07421875,
+        "memory_used": 8575.71484375,
+        "memory_percent": 66.8
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 2,
+        "queued": 2,
+        "completed": 68,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 12260,
+        "success_rate": 100.0,
+        "collection_time": 12.26
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:26:34.999117",
+      "system": {
+        "utc_timestamp": 1777778794.999138,
+        "datetime_str": "2026-05-02 20:26:34"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 76.6,
+        "memory_total": 16384.0,
+        "memory_available": 5128.65625,
+        "memory_used": 8909.078125,
+        "memory_percent": 68.7
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 2,
+        "queued": 6,
+        "completed": 20,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11932,
+        "success_rate": 95.24,
+        "collection_time": 11.932
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:26:51.754088",
+      "system": {
+        "utc_timestamp": 1777778811.7541041,
+        "datetime_str": "2026-05-02 20:26:51"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 65.9,
+        "memory_total": 16384.0,
+        "memory_available": 5099.984375,
+        "memory_used": 8909.7578125,
+        "memory_percent": 68.9
+      },
+      "task_queue": {
+        "incoming": 5,
+        "processing": 1,
+        "queued": 4,
+        "completed": 97,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11747,
+        "success_rate": 98.98,
+        "collection_time": 11.747
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:27:08.239407",
+      "system": {
+        "utc_timestamp": 1777778828.239866,
+        "datetime_str": "2026-05-02 20:27:08"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 67.3,
+        "memory_total": 16384.0,
+        "memory_available": 5412.05078125,
+        "memory_used": 8729.6796875,
+        "memory_percent": 67.0
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 1,
+        "queued": 3,
+        "completed": 90,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11472,
+        "success_rate": 98.9,
+        "collection_time": 11.472
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:27:25.919425",
+      "system": {
+        "utc_timestamp": 1777778845.919441,
+        "datetime_str": "2026-05-02 20:27:25"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 76.7,
+        "memory_total": 16384.0,
+        "memory_available": 5391.7109375,
+        "memory_used": 8809.234375,
+        "memory_percent": 67.1
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 1,
+        "queued": 9,
+        "completed": 47,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 12534,
+        "success_rate": 95.92,
+        "collection_time": 12.534
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:27:42.435873",
+      "system": {
+        "utc_timestamp": 1777778862.43589,
+        "datetime_str": "2026-05-02 20:27:42"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 58.9,
+        "memory_total": 16384.0,
+        "memory_available": 6010.62890625,
+        "memory_used": 8202.4921875,
+        "memory_percent": 63.3
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 1,
+        "queued": 4,
+        "completed": 25,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11510,
+        "success_rate": 100.0,
+        "collection_time": 11.51
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:27:58.757870",
+      "system": {
+        "utc_timestamp": 1777778878.7578912,
+        "datetime_str": "2026-05-02 20:27:58"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 60.6,
+        "memory_total": 16384.0,
+        "memory_available": 6540.23828125,
+        "memory_used": 7683.95703125,
+        "memory_percent": 60.1
+      },
+      "task_queue": {
+        "incoming": 4,
+        "processing": 3,
+        "queued": 1,
+        "completed": 87,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11316,
+        "success_rate": 98.86,
+        "collection_time": 11.316
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:28:15.012662",
+      "system": {
+        "utc_timestamp": 1777778895.01268,
+        "datetime_str": "2026-05-02 20:28:15"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 37.1,
+        "memory_total": 16384.0,
+        "memory_available": 6556.359375,
+        "memory_used": 7680.16796875,
+        "memory_percent": 60.0
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 2,
+        "queued": 0,
+        "completed": 51,
+        "failed": 0
+      },
+      "performance": {
+        "avg_response_time_ms": 11127,
+        "success_rate": 100.0,
+        "collection_time": 11.127
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:43:25.693495",
+      "system": {
+        "utc_timestamp": 1777779805.693509,
+        "datetime_str": "2026-05-02 20:43:25"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 73.5,
+        "memory_total": 16384.0,
+        "memory_available": 6112.09375,
+        "memory_used": 8130.3671875,
+        "memory_percent": 62.7
+      },
+      "task_queue": {
+        "incoming": 1,
+        "processing": 2,
+        "queued": 7,
+        "completed": 96,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 905675,
+        "success_rate": 96.97,
+        "collection_time": 905.675
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:43:41.991744",
+      "system": {
+        "utc_timestamp": 1777779821.991761,
+        "datetime_str": "2026-05-02 20:43:41"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 57.2,
+        "memory_total": 16384.0,
+        "memory_available": 5812.29296875,
+        "memory_used": 8427.1015625,
+        "memory_percent": 64.5
+      },
+      "task_queue": {
+        "incoming": 5,
+        "processing": 2,
+        "queued": 8,
+        "completed": 98,
+        "failed": 2
+      },
+      "performance": {
+        "avg_response_time_ms": 11152,
+        "success_rate": 98.0,
+        "collection_time": 11.152
+      },
+      "current_tasks": {
+        "sleeping": 0,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:43:56.688689",
+      "system": {
+        "utc_timestamp": 1777779836.6887622,
+        "datetime_str": "2026-05-02 20:43:56"
+      },
+      "gateway": {
+        "state": "running",
+        "details": "Service: LaunchAgent (loaded)\nFile logs: /tmp/openclaw/openclaw-2026-05-02.log\nCommand: /usr/local/bin/node /Users/rave/.nvm/versions/node/v22.17.0/lib/node_modules/openclaw/dist/index.js gateway --port 18789\nService file: ~/Library/LaunchAgents/ai.openclaw.gateway.plist\nService env: OPENCLAW_GATEWAY_PORT=18789\n\nConfig (cli): ~/.openclaw/openclaw.json\nConfig (service): ~/.openclaw/openclaw.json\n\nGateway: bind=loopback (127.0.0.1), port=18789 (service args)\nProbe target: ws://127.0.0.1:18789\nDashboard: http://127.0.0.1:18789/\nProbe note: Loopback-only gateway; only local clients can connect.\n\nRuntime: running (pid 46060)\nRPC probe: ok\n\nListening: 127.0.0.1:18789\nTroubles: run openclaw status\nTroubleshooting: https://docs.openclaw.ai/troubleshooting"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 12.1,
+        "memory_total": 16384.0,
+        "memory_available": 6260.14453125,
+        "memory_used": 7979.265625,
+        "memory_percent": 61.8
+      },
+      "task_queue": {
+        "incoming": 2,
+        "processing": 1,
+        "queued": 9,
+        "completed": 98,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 9691,
+        "success_rate": 97.03,
+        "collection_time": 9.691
+      },
+      "current_tasks": {
+        "sleeping": 1,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:48:59.136170",
+      "system": {
+        "utc_timestamp": 1777780139.1361868,
+        "datetime_str": "2026-05-02 20:48:59"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 97.5,
+        "memory_total": 16384.0,
+        "memory_available": 4984.375,
+        "memory_used": 9335.96484375,
+        "memory_percent": 69.6
+      },
+      "task_queue": {
+        "incoming": 3,
+        "processing": 2,
+        "queued": 5,
+        "completed": 73,
+        "failed": 3
+      },
+      "performance": {
+        "avg_response_time_ms": 297315,
+        "success_rate": 96.05,
+        "collection_time": 297.315
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T20:49:15.689465",
+      "system": {
+        "utc_timestamp": 1777780155.689483,
+        "datetime_str": "2026-05-02 20:49:15"
+      },
+      "gateway": {
+        "state": "offline",
+        "details": "Command '['openclaw', 'gateway', 'status']' timed out after 10 seconds"
+      },
+      "processes": [],
+      "system_resources": {
+        "cpu": 68.9,
+        "memory_total": 16384.0,
+        "memory_available": 5257.83203125,
+        "memory_used": 9059.0078125,
+        "memory_percent": 67.9
+      },
+      "task_queue": {
+        "incoming": 0,
+        "processing": 2,
+        "queued": 5,
+        "completed": 67,
+        "failed": 1
+      },
+      "performance": {
+        "avg_response_time_ms": 11537,
+        "success_rate": 98.53,
+        "collection_time": 11.537
+      },
+      "current_tasks": {
+        "sleeping": 2,
+        "active": 0
+      }
+    }
+  ],
+  "alerts": []
+}
