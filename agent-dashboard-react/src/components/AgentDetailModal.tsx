@@ -1,6 +1,6 @@
 import React from 'react';
 import { Agent } from '../App';
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
+import { Dialog } from '@headlessui/react';
 import { XMarkIcon, PlayIcon, StopIcon, CpuChipIcon, ArrowsRightLeftIcon } from '@heroicons/react/24/outline';
 
 interface AgentDetailModalProps {
@@ -28,14 +28,14 @@ export const AgentDetailModal: React.FC<AgentDetailModalProps> = ({
   return (
     <Dialog open={isOpen} onClose={onClose} className={`relative z-50 ${darkMode ? 'dark' : ''}`}>
       {/* Backdrop */}
-      <DialogBackdrop
+      <Dialog.Backdrop
         transition
         className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
       />
       
       {/* Modal container */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <DialogPanel
+        <Dialog.Panel
           transition
           className="relative transform overflow-hidden rounded-xl bg-white dark:bg-gray-800 text-left shadow-xl transition-all data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-2xl"
         >
@@ -54,9 +54,9 @@ export const AgentDetailModal: React.FC<AgentDetailModalProps> = ({
                 )}
               </div>
               <div>
-                <DialogTitle className="text-lg font-semibold text-gray-900 dark:text-white">
+                <Dialog.Title className="text-lg font-semibold text-gray-900 dark:text-white">
                   {agent.name}
-                </DialogTitle>
+                </Dialog.Title>
                 <div className="flex items-center mt-1">
                   <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                     agent.status === 'running' 
@@ -183,7 +183,7 @@ export const AgentDetailModal: React.FC<AgentDetailModalProps> = ({
               </button>
             )}
           </div>
-        </DialogPanel>
+        </Dialog.Panel>
       </div>
     </Dialog>
   );
